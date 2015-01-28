@@ -4,7 +4,10 @@ execute_process(
 )
 
 if(config_file STREQUAL "")
-  message(FATAL_ERROR "Qt5 Core module not found")
+# chenbd
+#message(FATAL_ERROR "Qt5 Core module not found")
+    set(config_file "${QT_ROOT}/lib/cmake/Qt5Core/Qt5CoreConfig.cmake")
+    message(STATUS "Qt5 Core module is at ${config_file}")
 endif(config_file STREQUAL "")
 
 include(${config_file})

@@ -148,6 +148,9 @@ if args.version == "4.8.5":
 elif args.version == "5.1.0":
     prefix_class_item = 'Quick'
     invoke_type_connection = 'BlockingQueued'
+else :
+    prefix_class_item = 'Quick'
+    invoke_type_connection = 'BlockingQueued'
 
 header_name = 'request_to_sdl.h'
 source_name = 'request_to_sdl.cc'

@@ -62,6 +62,7 @@ set(ENABLE_LOG_OPTION 	"$ENV{ENABLE_LOG}")
 set(ARCH_TYPE_OPTION	"$ENV{ARCH_TYPE}")
 set(POLICY_OPTION 	"$ENV{POLICY_TYPE}")
 set(SECURITY_OPTION 	"$ENV{SECURITY_MODE}")
+set(QT_ROOT "$ENV{QT_ROOT}")
 
 add_custom_target(pasa-tarball
   COMMAND ${CMAKE_SOURCE_DIR}/tools/Utils/export-customer-specific.sh ${CMAKE_SOURCE_DIR} ${CMAKE_BINARY_DIR} pasa
@@ -272,6 +273,7 @@ if (HMI STREQUAL "qt")
     if (CMAKE_SYSTEM_NAME STREQUAL "QNX")
         set(qt_version "4.8.5")
     else ()
+        # chenbd set(qt_version "5.1.0")
         set(qt_version "5.1.0")
     endif ()
 
@@ -279,6 +281,11 @@ if (HMI STREQUAL "qt")
         COMMAND ${CMAKE_SOURCE_DIR}/FindQt.sh -v ${qt_version}
             OUTPUT_VARIABLE qt_bin_dir
     )
+# chenbd
+    if(qt_bin_dir STREQUAL "")
+        set(qt_bin_dir "${QT_ROOT}/bin")
+    endif()
+
     message(STATUS "Binary directory Qt ${qt_version} is ${qt_bin_dir}")
     set(ENV{PATH} ${qt_bin_dir}:$ENV{PATH})
 

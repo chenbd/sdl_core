@@ -276,6 +276,9 @@ if args.version == "4.8.5":
 elif args.version == "5.1.0":
     prefix_class_item = 'JS'
     invoke_type_connection = 'BlockingQueued'
+elif args.version == "5.1.1":
+    prefix_class_item = 'JS'
+    invoke_type_connection = 'BlockingQueued'
 else:
     prefix_class_item = 'JS'
     invoke_type_connection = 'BlockingQueued'

@@ -4,7 +4,10 @@ execute_process(
 )
 
 if(config_file STREQUAL "")
-  message(FATAL_ERROR "Qt5 Qml module not found")
+#chenbd
+#message(FATAL_ERROR "Qt5 Qml module not found")
+    set(config_file "${QT_ROOT}/lib/cmake/Qt5Xml/Qt5XmlConfig.cmake")
+    message(STATUS "Qt5 Qml module is at ${config_file}")
 endif(config_file STREQUAL "")
 
 include(${config_file})

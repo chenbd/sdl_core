@@ -4,7 +4,10 @@ execute_process(
 )
 
 if(config_file STREQUAL "")
-  message(FATAL_ERROR "Qt5 Quick module not found")
+    #chenbd
+    #message(FATAL_ERROR "Qt5 Quick module not found")
+    set(config_file "${QT_ROOT}/lib/cmake/Qt5Quick/Qt5QuickConfig.cmake")
+    message(STATUS "Qt5 Quick module is at ${config_file}")
 endif(config_file STREQUAL "")
 
 include(${config_file})

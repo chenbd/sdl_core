@@ -51,6 +51,10 @@ elseif (${qt_version} MATCHES "5.1.0")
   qt5_use_modules(${target} Core Qml)
   set(model_dir ${CMAKE_CURRENT_BINARY_DIR}/../../qml_model_qt5/)
   set(copy_destination ${CMAKE_CURRENT_BINARY_DIR}/../../qml_model_qt5/${destination})
+elseif (${qt_version} MATCHES "5.1.1")
+  qt5_use_modules(${target} Core Qml)
+  set(model_dir ${CMAKE_CURRENT_BINARY_DIR}/../../qml_model_qt5/)
+  set(copy_destination ${CMAKE_CURRENT_BINARY_DIR}/../../qml_model_qt5/${destination})
 endif ()
 
 add_custom_target(copy_library_${target} ALL

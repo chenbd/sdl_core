@@ -234,6 +234,9 @@ if args.version == "4.8.5":
 elif args.version == "5.1.0":
     prefix_class_item = 'Quick'
     invoke_type_connection = 'BlockingQueued'
+else:
+    prefix_class_item = 'Quick'
+    invoke_type_connection = 'BlockingQueued'
 
 header_name = 'hmi_requests.h'
 source_name = 'hmi_requests.cc'

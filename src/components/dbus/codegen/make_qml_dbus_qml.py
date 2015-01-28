@@ -184,6 +184,9 @@ if args.version == "4.8.5":
 elif args.version == "5.1.0":
     qt_quick_version = "2.0"
     type_variant_name = "var"
+else :
+    qt_quick_version = "2.0"
+    type_variant_name = "var"
 
 if not path.isdir(args.outdir):
     makedirs(args.outdir)
